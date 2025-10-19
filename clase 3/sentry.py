@@ -1,4 +1,4 @@
-import sentry_sdk
+import sentry_sdk ,logging
 
 sentry_sdk.init(
     dsn="https://a345a9ba9e05130cb953750bb8cd92af@o4510210809790464.ingest.us.sentry.io/4510210811494400",
@@ -12,6 +12,8 @@ def procesar_datos(lista):
     for valor in lista:
         total += valor
     return total / len(lista)
-
-datos = [10, 20, 40]  ## error de tipo de dato sting -debe ser numero
-print(procesar_datos(datos))
+try:
+    datos = [10, 20, 40]  ## error de tipo de dato sting -debe ser numero
+#print(procesar_datos(datos))
+except TypeError as e: ## modificacion de excepcion de error division para cero
+    logging.error(f"Error detectado: {e}")
