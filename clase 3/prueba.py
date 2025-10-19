@@ -14,8 +14,8 @@ logging.error("No se pudo conectar a la base de datos")
 
 
 try:
-    resultado = 10 / 0
-except Exception as e:
+    resultado = 10 /0
+except ZeroDivisionError as e: ## modificacion de excepcion de error division para cero
     logging.error(f"Error detectado: {e}")
     traceback.print_exc()
 
