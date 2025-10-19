@@ -13,5 +13,5 @@ def procesar_datos(lista):
         total += valor
     return total / len(lista)
 
-datos = [10, "20", 40]  ## error de tipo de dato sting -debe ser numero
+datos = [10, 20, 40]  ## error de tipo de dato sting -debe ser numero
 print(procesar_datos(datos))
